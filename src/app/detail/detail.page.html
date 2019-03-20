@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+    <ion-item-group>
+      <ion-item-divider>
+        <ion-label>Name</ion-label>
+      </ion-item-divider>
+      <ion-item>
+        <ion-label>{{user.name}}</ion-label>
+      </ion-item>
+    </ion-item-group>
+    <ion-item-group>
+      <ion-item-divider>
+        <ion-label>Email</ion-label>
+      </ion-item-divider>
+      <ion-item>
+        <ion-label>{{user.email}}</ion-label>
+      </ion-item>
+    </ion-item-group>
+    <ion-item-group>
+      <ion-item-divider>
+        <ion-label>Address</ion-label>
+      </ion-item-divider>
+      <ion-item>
+        <ion-label>
+          <h3>{{user.address?.street}}</h3>
+          <h4>{{user.address?.city}} {{user.address?.zipcode}}</h4>
+        </ion-label>
+      </ion-item>
+    </ion-item-group>
+    <ion-item-group *ngIf="user.phone">
+      <ion-item-divider>
+        <ion-label>Phone</ion-label>
+      </ion-item-divider>
+      <ion-item>
+        <ion-label>{{user.phone}} <ion-button (click)="call()"><ion-icon name="call"></ion-icon> Call</ion-button></ion-label>
+      </ion-item>
+    </ion-item-group>
+    <ion-item-group>
+      <ion-item-divider>
+        <ion-label>Web</ion-label>
+      </ion-item-divider>
+      <ion-item>
+        <ion-label>{{user.website}}</ion-label>
+      </ion-item>
+    </ion-item-group>
+
+      
+</ion-content>
